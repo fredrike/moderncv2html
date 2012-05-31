@@ -36,24 +36,54 @@ h1:before, .section::before {
     margin: 4px 10px !important;
 }
 
-.cventry, .cvitem {
+.cventry, .cvitem, .cvdoubleitem {
     margin-left: 150px;
     margin-top: 12px;
 }
+.cvlist {
+    margin-left: 170px;
+}
+.cvlistdoubleitem {
+    margin-left: 158px;
+}
 
-.cvitem {
+.cvitem, .cvdoubleitem {
     margin-top: 2px;
 }
-.cventry > .title {
+.cventry > .title, .cvitem > .desc {
     font-weight: bold;
 }
 
-.time, .cvitem > .title {
+.cvlist {
+    list-style: circle outside;
+    display: list-item;
+}
+
+.cvlistdoubleitem > span:before{ content:"-"; position:relative; left:-6px;}
+
+.cvlistdoubleitem > .item2 {
+    margin-left: 200px;
+}
+
+.time, .cvitem > .title, .cvdoubleitem > .title1 {
     text-align: right;
     display: block;
     width: 135px;
     margin-left: -150px;
     height: 0px;
+}
+
+.cvdoubleitem > .cont1 {
+    width: 230px;
+    display: inline-block;
+}
+
+.cvdoubleitem > .title2 {
+    display: inline-block;
+    width: 100px;
+}
+.cvitem > .comment {
+    float: right;
 }
 
 .cventry > .title, .employer {

@@ -2,7 +2,7 @@ sub do_cmd_cvlistitem{
     local($_) = @_;
     local($item);
     s/$next_pair_pr_rx/$item=$2;''/eo;
-    "<ul><li>".$item."</li></ul>" . $_;
+    '<div class="cvlist">'.$item."</div>" . $_;
 
 }
 
@@ -56,6 +56,38 @@ sub do_cmd_cvitem{
     '<div class="cvitem"></span><span class="title">'.$title.
     '</span><span class="desc">'.$desc.
     '</span></div>' . $_;
+}
+
+sub do_cmd_cvdoubleitem {
+    local($_) = @_;
+    local($return, $title1, $title2, $cont1, $cont2);
+    $title1 = &missing_braces unless
+        s/$next_pair_pr_rx/$title1=$2;''/eo;
+    $cont1 = &missing_braces unless
+        s/$next_pair_pr_rx/$cont1=$2;''/eo;
+    $title2 = &missing_braces unless
+        s/$next_pair_pr_rx/$title2=$2;''/eo;
+    $cont2 = &missing_braces unless
+        s/$next_pair_pr_rx/$cont2=$2;''/eo;
+
+    '<div class="cvdoubleitem"><span class="title1">'. $title1.
+    '</span><span class="cont1">'.$cont1.
+    '</span><span class="title2">'. $title2.
+    '</span><span class="cont2">'.$cont2.
+    '</span></div>'. $_;
+}
+
+sub do_cmd_cvlistdoubleitem {
+    local($_) = @_;
+    local($return, $item1, $item2);
+    $item1 = &missing_braces unless
+        s/$next_pair_pr_rx/$item1=$2;''/eo;
+    $item2 = &missing_braces unless
+        s/$next_pair_pr_rx/$item2=$2;''/eo;
+
+    '<div class="cvlistdoubleitem"><span class="item1">'. $item1.
+    '</span><span class="item2">'.$item2.
+    '</span></div>'. $_;
 }
 
 sub do_cmd_cvitemwithcomment{
@@ -119,8 +151,6 @@ sub do_cmd_maketitle {
     '<div class="head">'.$t_firstname.'<div class="contact">'.$t_address.'</div></div>'. $_;
 
 }
-
-#sub do_cmd_familyname {}
 sub do_cmd_moderncvcolor {}
 sub do_cmd_moderncvstyle {}
 sub do_cmd_href {}
