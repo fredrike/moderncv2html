@@ -50,7 +50,7 @@ h1:before, .section::before {
 .cvitem, .cvdoubleitem {
     margin-top: 2px;
 }
-.cventry > .title, .cvitem > .desc {
+.cventry > .title {
     font-weight: bold;
 }
 
