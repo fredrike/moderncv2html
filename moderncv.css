@@ -1,8 +1,15 @@
+html {
+    background-color: lightgrey;
+}
+
 body {
     margin: 24px auto;
     font-size: 0.8em;
     font-family: Verdana, Arial, Sans-serif;
-    width: 800px;
+    width: 700px;
+    background-color: white;
+    padding: 50px;
+    box-shadow: 3px 3px 20px 4px grey;
 }
 
 .head {
@@ -29,11 +36,12 @@ h1, .section {
     margin-top: 20px;
 }
 h1:before, .section::before {
-    border: darkblue solid 2px;
-    width: 120px;
+    border-top: 
+    darkBlue solid 5px;
+    width: 84px;
     content: " ";
     display: inline-block;
-    margin: 4px 10px !important;
+    margin: 4px 4px 4px 52px !important;
 }
 
 .cventry, .cvitem, .cvdoubleitem {
